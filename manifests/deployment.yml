@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: muniazurevoteappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: muniazurevoteappredis
+  template:
+    metadata:
+      labels:
+        app: muniazurevoteappredis 
+    spec:
+      containers:
+        - name: muniazurevoteappredis 
+          image: acrdemovote.azurecr.io/muniazurevoteappredis
+          ports:
+          - containerPort: 80
